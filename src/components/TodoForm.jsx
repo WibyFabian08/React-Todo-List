@@ -11,6 +11,7 @@ const TodoForm = function ({ addTodo }) {
       return alert("Todo Tidak Boleh Kosong!!!!!");
     }
 
+    // fungsi untuk add data ke database
     addTodo(inputUser);
     alert(inputUser);
     setInputUser("");

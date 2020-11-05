@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useDebugValue, useState } from "react";
 
 import Paper from "../components/Paper";
 import Header from "../components/Header";
@@ -18,10 +18,20 @@ const TodoList = function () {
     }
   ]);
 
+  const addTodo = function (value) {
+    const addedTodo = [...todos, { text: value }];
+
+    if (todos === value) {
+      return alert("todo sudah ada dalam list");
+    } else {
+      setTodos(addedTodo);
+    }
+  };
+
   return (
     <Paper>
       <Header />
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
       <Todos todos={todos} />
     </Paper>
   );
