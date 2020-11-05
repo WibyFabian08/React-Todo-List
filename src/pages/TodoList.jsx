@@ -8,15 +8,11 @@ import Todos from "../components/Todos";
 const TodoList = function () {
   const [todos, setTodos] = useState([
     {
-      text: "Belajar React"
-    },
-    {
-      text: "Belajar Berenang"
-    },
-    {
-      text: "Belajar Memancing"
+      text: "Daftar Kegiatan yang Harus Dilakukan"
     }
   ]);
+
+  const [showAdd, setShowAdd] = useState(false);
 
   const addTodo = function (value) {
     const addedTodo = [...todos, { text: value }];
@@ -28,10 +24,14 @@ const TodoList = function () {
     }
   };
 
+  const showAddTogle = function () {
+    setShowAdd(!showAdd);
+  };
+
   return (
     <Paper>
-      <Header />
-      <TodoForm addTodo={addTodo} />
+      <Header showAddTogle={showAddTogle} />
+      <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} />
     </Paper>
   );
