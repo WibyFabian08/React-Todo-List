@@ -30,7 +30,7 @@ const TodoList = function () {
 
   return (
     <Paper>
-      <Header showAddTogle={showAddTogle} />
+      <Header showAddTogle={showAddTogle} showAdd={showAdd} />
       <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} />
     </Paper>

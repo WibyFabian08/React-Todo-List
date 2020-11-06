@@ -11,6 +11,10 @@ const TodoForm = function ({ addTodo, showAdd }) {
       return alert("Todo Tidak Boleh Kosong!!!!!");
     }
 
+    if (inputUser.length > 40) {
+      return alert("Input Terlalu Panjang!!!!");
+    }
+
     // fungsi untuk add data ke database
     addTodo(inputUser);
     alert(inputUser);
