@@ -26,8 +26,8 @@ const TodoList = function () {
   const addTodo = function (value) {
     const addedTodo = [...todos, { text: value, isCompleted: false }];
 
-    if (todos === value) {
-      return alert("todo sudah ada dalam list");
+    if (todos.length > 10) {
+      alert("Todo Sudah Penuh!!!!!!");
     } else {
       setTodos(addedTodo);
     }
@@ -43,6 +43,8 @@ const TodoList = function () {
 
     setTodos(addedTodo);
   };
+
+  console.log("todos", todos);
 
   return (
     <Paper>
