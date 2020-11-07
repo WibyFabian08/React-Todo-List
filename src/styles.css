@@ -136,6 +136,7 @@ html {
   font-family: "Homemade Apple", sans-serif;
   font-size: 24px;
   border-bottom: 1px solid var(--main-red-color);
+  cursor: pointer;
 }
 
 .todo-text {
