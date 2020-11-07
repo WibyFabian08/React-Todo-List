@@ -146,3 +146,13 @@ html {
   left: 50%;
   transform: translate(-50%);
 }
+
+.todos_kosong {
+  font-family: "Homemade Apple", sans-serif;
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.add-kosong {
+  font-family: "Bungee", sans-serif;
+}

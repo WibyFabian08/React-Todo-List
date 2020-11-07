@@ -6,17 +6,23 @@ import Todo from "./Todo";
 const Todos = function ({ todos, completeTodo }) {
   return (
     <section className="todos">
-      {todos.map((todo, index) => {
-        return (
-          <Todo
-            key={index}
-            text={todo.text}
-            isCompleted={todo.isCompleted}
-            completeTodo={completeTodo}
-            index={index}
-          />
-        );
-      })}
+      {todos.length > 0 &&
+        todos.map((todo, index) => {
+          return (
+            <Todo
+              key={index}
+              text={todo.text}
+              isCompleted={todo.isCompleted}
+              completeTodo={completeTodo}
+              index={index}
+            />
+          );
+        })}
+      {todos.length === 0 && (
+        <div className="todos_kosong">
+          Clikc <span className="add-kosong">Add</span> to Fill the Todo List
+        </div>
+      )}
     </section>
   );
 };

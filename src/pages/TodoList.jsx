@@ -44,11 +44,17 @@ const TodoList = function () {
     setTodos(addedTodo);
   };
 
-  console.log("todos", todos);
+  const clearTodos = function () {
+    setTodos([]);
+  };
 
   return (
     <Paper>
-      <Header showAddTogle={showAddTogle} showAdd={showAdd} />
+      <Header
+        showAddTogle={showAddTogle}
+        showAdd={showAdd}
+        clearTodos={clearTodos}
+      />
       <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} completeTodo={completeTodo} />
     </Paper>
