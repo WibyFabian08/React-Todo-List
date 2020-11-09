@@ -1,0 +1,18 @@
+.todos {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 500px;
+}
+
+.todosKosong {
+  font-family: "Homemade Apple", sans-serif;
+  font-size: 3.2rem;
+  text-align: center;
+  padding: 24px;
+  text-decoration: lowercase;
+}
+
+.addKosong {
+  font-family: "Bungee", sans-serif;
+}

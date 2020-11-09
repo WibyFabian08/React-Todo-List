@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Todo from "./Todo";
+import Todo from "../todo/Todo";
+import styles from "./todos.module.css";
 
 const Todos = function ({ todos, completeTodo }) {
   return (
-    <section className="todos">
+    <section className={styles.todos}>
       {todos.length > 0 &&
         todos.map((todo, index) => {
           return (
@@ -19,8 +20,9 @@ const Todos = function ({ todos, completeTodo }) {
           );
         })}
       {todos.length === 0 && (
-        <div className="todos_kosong">
-          Clikc <span className="add-kosong">Add</span> to Fill the Todo List
+        <div className={styles.todosKosong}>
+          Clikc <span className={styles.addKosong}>Add</span> to Fill the Todo
+          List
         </div>
       )}
     </section>

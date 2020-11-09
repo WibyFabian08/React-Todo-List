@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import styles from "./todoForm.module.css";
+
 const TodoForm = function ({ addTodo, showAdd }) {
   const [inputUser, setInputUser] = useState("");
 
@@ -24,15 +26,15 @@ const TodoForm = function ({ addTodo, showAdd }) {
 
   if (showAdd) {
     return (
-      <section className="todo-form">
-        <form className="input-form" onSubmit={handleFormSubmit}>
+      <section className={styles.todoForm}>
+        <form className={styles.inputForm} onSubmit={handleFormSubmit}>
           <input
             type="text"
-            className="input-todo"
+            className={styles.inputTodo}
             value={inputUser}
             onChange={(event) => setInputUser(event.target.value)}
           ></input>
-          <button className="add-todo main-black-color">Add</button>
+          <button className={styles.addTodo}>Add</button>
         </form>
       </section>
     );
