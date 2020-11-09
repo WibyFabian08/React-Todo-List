@@ -32,7 +32,7 @@ const TodoForm = function ({ addTodo, showAdd }) {
             value={inputUser}
             onChange={(event) => setInputUser(event.target.value)}
           ></input>
-          <button className="add-todo main-red-color">Add</button>
+          <button className="add-todo main-black-color">Add</button>
         </form>
       </section>
     );

@@ -45,7 +45,7 @@ const TodoList = function () {
   };
 
   const clearTodos = function () {
-    setTodos([]);
+    !showAdd && setTodos([]);
   };
 
   return (
