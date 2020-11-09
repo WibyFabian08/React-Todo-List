@@ -1,0 +1,43 @@
+.mainRedColor {
+  color: var(--main-red-color);
+}
+
+.mainBlackColor {
+  color: var(--main-black-color);
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.headerTitle {
+  /* flex: 1; */
+  width: 52%;
+  text-align: center;
+  font-family: "Homemade Apple", sans-serif;
+  font-size: 3.6rem;
+  text-transform: lowercase;
+}
+
+.headerButton {
+  width: 24%;
+  background: unset;
+  border: unset;
+  outline: unset;
+  font-size: 1.8rem;
+  font-family: "Bungee", sans-serif;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.headerButton.MainRedColor:active {
+  text-shadow: 1px 1px 2px var(--main-red-color);
+}
+
+.headerButton.MainBlackColor:active {
+  text-shadow: 1px 1px 2px var(--main-black-color);
+}
