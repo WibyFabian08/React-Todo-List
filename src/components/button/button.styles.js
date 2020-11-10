@@ -1,17 +1,20 @@
 import { css } from "@emotion/core";
 
-export const button = function ({ color, align }) {
+export const button = function ({ color, align, theme }) {
   let textColor;
+  const {
+    color: { primary }
+  } = theme;
 
   switch (color) {
     case "red":
-      textColor = "#e06262";
+      textColor = primary.red;
       break;
     case "black":
-      textColor = "#484848";
+      textColor = primary.black;
       break;
     default:
-      textColor = "#484848";
+      textColor = primary.black;
   }
 
   return css`
@@ -25,5 +28,8 @@ export const button = function ({ color, align }) {
     cursor: pointer;
     color: ${color};
     text-align: ${align};
+    &:active {
+      text-shadow: 1px 1px 2px ${color};
+    }
   `;
 };

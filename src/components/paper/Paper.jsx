@@ -1,12 +1,15 @@
-import React from "react";
+/** @jsx jsx */
+// import React from "react";
+import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 
-import styles from "./paper.module.css";
+// import styles from "./paper.module.css";
+import * as styles from "./paper.styles";
 
 const Paper = function ({ children }) {
   return (
-    <div className={styles.container}>
-      <div className={styles.frame}>{children}</div>
+    <div css={styles.container}>
+      <div css={styles.frame}>{children}</div>
     </div>
   );
 };

@@ -1,13 +1,16 @@
-import React from "react";
+/** @jsx jsx */
+// import React from "react";
+import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 
-import styles from "./todo.module.css";
+// import styles from "./todo.module.css";
+import * as styles from "./todo.styles";
 
 const Todo = function ({ text, completeTodo, index, isCompleted }) {
   return (
-    <div className={styles.todo} onClick={() => completeTodo(index)}>
+    <div css={styles.todo} onClick={() => completeTodo(index)}>
       <span
-        className={styles.todoText}
+        css={styles.todoText}
         style={{ textDecoration: isCompleted ? "line-through" : "initial" }}
       >
         {text}
