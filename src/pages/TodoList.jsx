@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-import Paper from "../components/Paper";
-import Header from "../components/Header";
-import TodoForm from "../components/TodoForm";
-import Todos from "../components/Todos";
+import Paper from "../components/paper/Paper";
+import Header from "../components/header/Header";
+import TodoForm from "../components/todoFrom/TodoForm";
+import Todos from "../components/todos/Todos";
 
 const TodoList = function () {
   const [todos, setTodos] = useState([
     {
-      text: "Daftar Kegiatan yang Harus Dilakukan",
+      text: "Belajar React",
       isCompleted: false
     },
     {
-      text: "Daftar Kegiatan yang Harus Dilakukan",
+      text: "Belajar Javascript",
       isCompleted: false
     },
     {
-      text: "Daftar Kegiatan yang Harus Dilakukan",
+      text: "Belajar Javascript Framework",
       isCompleted: false
     }
   ]);
@@ -45,7 +45,12 @@ const TodoList = function () {
   };
 
   const clearTodos = function () {
-    !showAdd && setTodos([]);
+    if (showAdd) {
+      !showAdd && setTodos([]);
+      return alert("Tidak Bisa menghapus ketika sedang ADD todo");
+    } else {
+      setTodos([]);
+    }
   };
 
   return (
