@@ -2,15 +2,13 @@
 // import React from "react";
 import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
-import { useTheme } from "emotion-theming";
 
 // import styles from "./button.module.css";
 import * as styles from "./button.styles";
 
 const Button = ({ text, onClick, color, align }) => {
-  const theme = useTheme();
   return (
-    <button css={styles.button({ color, align, theme })} onClick={onClick}>
+    <button css={styles.button({ color, align })} onClick={onClick}>
       {text}
     </button>
   );

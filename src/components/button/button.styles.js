@@ -1,20 +1,15 @@
 import { css } from "@emotion/core";
 
-export const button = function ({ color, align, theme }) {
-  let textColor;
-  const {
-    color: { primary }
-  } = theme;
-
+export const button = function ({ color, align }) {
   switch (color) {
-    case "red":
-      textColor = primary.red;
-      break;
     case "black":
-      textColor = primary.black;
+      color = "#2d2d2d";
+      break;
+    case "red":
+      color = "#e06262";
       break;
     default:
-      textColor = primary.black;
+      color = "#2d2d2d";
   }
 
   return css`
