@@ -14,7 +14,7 @@ export const todosKosong = function () {
     font-family: "Homemade Apple", sans-serif;
     font-size: 3.2rem;
     text-align: center;
-    padding: 24px;
+    padding: 16px;
     text-decoration: lowercase;
   `;
 };

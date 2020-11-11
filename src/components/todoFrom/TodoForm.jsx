@@ -2,9 +2,13 @@
 import React, { useState } from "react";
 import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
+import Button from "../button/Button";
 
 // import styles from "./todoForm.module.css";
 import * as styles from "./todoFrom.styles";
+
+import Container from "../../layout/Container";
+import Item from "../../layout/Item";
 
 const TodoForm = function ({ addTodo, showAdd }) {
   const [inputUser, setInputUser] = useState("");
@@ -29,15 +33,21 @@ const TodoForm = function ({ addTodo, showAdd }) {
 
   if (showAdd) {
     return (
-      <section css={styles.todoForm}>
+      <section className="todoform-component">
         <form css={styles.inputForm} onSubmit={handleFormSubmit}>
-          <input
-            type="text"
-            css={styles.inputTodo}
-            value={inputUser}
-            onChange={(event) => setInputUser(event.target.value)}
-          ></input>
-          <button css={styles.addTodo}>Add</button>
+          <Container alignItem="center">
+            <Item widht="100%" padding="0 0 0 16px">
+              <input
+                type="text"
+                css={styles.inputTodo}
+                value={inputUser}
+                onChange={(event) => setInputUser(event.target.value)}
+              ></input>
+            </Item>
+            <Item>
+              <Button text="Add" />
+            </Item>
+          </Container>
         </form>
       </section>
     );

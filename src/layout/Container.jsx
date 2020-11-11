@@ -9,15 +9,19 @@ const Container = function ({
   flexWrap,
   justifyContent,
   alignItem,
-  alignContent
+  alignContent,
+  height,
+  minHeight
 }) {
   const containerStyles = css`
     display: flex;
     flex-direction: ${flexDirection};
     flex-wrap: ${flexWrap};
     justify-content: ${justifyContent};
-    align-item: ${alignItem};
+    align-items: ${alignItem};
     align-content: ${alignContent};
+    height: ${height};
+    min-height: ${minHeight};
   `;
 
   return (
@@ -30,9 +34,10 @@ const Container = function ({
 Container.defaultProps = {
   flexDirection: "row",
   flexWrap: "nowrap",
-  justifyContent: "flex-start",
-  alignItm: "stretch",
-  alignContent: "flex-start"
+  justifyContent: "space-between",
+  alignItem: "stretch",
+  alignContent: "flex-start",
+  height: "auto"
 };
 
 Container.propTypes = {
@@ -85,7 +90,9 @@ Container.propTypes = {
     "baseline",
     "first baseline",
     "last baseline"
-  ])
+  ]),
+  height: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  minHeight: PropTypes.string
 };
 
 export default Container;

@@ -3,12 +3,14 @@
 import { jsx, css } from "@emotion/core";
 import PropTypes from "prop-types";
 
-const Item = function ({ children, flex }) {
+const Item = function ({ children, flex, widht, padding }) {
   return (
     <div
       className="flex-item"
       css={css`
         flex: ${flex};
+        width: ${widht};
+        padding: ${padding};
       `}
     >
       {children}
@@ -18,10 +20,12 @@ const Item = function ({ children, flex }) {
 
 Item.propsTypes = {
   children: PropTypes.oneOfType([
-    PropTypes.array(PropTypes.node),
+    PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]),
-  flex: PropTypes.oneOf([PropTypes.number, PropTypes.string])
+  flex: PropTypes.oneOf([PropTypes.number, PropTypes.string]),
+  width: PropTypes.oneOf([PropTypes.number, PropTypes.string]),
+  padding: PropTypes.oneOf([PropTypes.number, PropTypes.string])
 };
 
 export default Item;

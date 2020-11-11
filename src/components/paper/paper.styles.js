@@ -16,8 +16,8 @@ export const frame = function () {
     border: 1px solid #2d2d2d;
     height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
   `;
 };

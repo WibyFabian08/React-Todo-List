@@ -7,17 +7,28 @@ import Button from "../button/Button";
 // import styles from "./header.module.css";
 import * as styles from "./header.styles";
 
+import Container from "../../layout/Container";
+import Item from "../../layout/Item";
+
 const Header = function ({ showAddTogle, showAdd, clearTodos }) {
   return (
-    <section css={styles.header}>
-      <Button
-        text={showAdd ? "Finish" : "Add"}
-        color="black"
-        align="left"
-        onClick={showAddTogle}
-      />
-      <h1 css={styles.headerTitle}>Todo List</h1>
-      <Button text="Clear" color="red" align="right" onClick={clearTodos} />
+    <section className="container-header">
+      <Container alignItem="flex-start">
+        <Item>
+          <Button
+            text={showAdd ? "Finish" : "Add"}
+            color="black"
+            align="left"
+            onClick={showAddTogle}
+          />
+        </Item>
+        <Item textAlign="left">
+          <h1 css={styles.headerTitle}>Todo List</h1>
+        </Item>
+        <Item>
+          <Button text="Clear" color="red" align="right" onClick={clearTodos} />
+        </Item>
+      </Container>
     </section>
   );
 };

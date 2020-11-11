@@ -6,17 +6,16 @@ export const todoForm = function () {
   `;
 };
 
-export const inputForm = function () {
-  return css`
-    display: flex;
-    align-items: center;
-  `;
-};
+// export const inputForm = function () {
+//   return css`
+//     /* display: flex;
+//     align-items: center; */
+//   `;
+// };
 
 export const inputTodo = function () {
   return css`
     padding: 0 64px;
-    flex: 1;
     background: unset;
     border: unset;
     outline: unset;
@@ -24,20 +23,6 @@ export const inputTodo = function () {
     font-family: "Homemade Apple", sans-serif;
     text-decoration: lowercase;
     font-size: 16px;
-  `;
-};
-
-export const addTodo = function () {
-  return css`
-    padding: 16px;
-    background: unset;
-    outline: unset;
-    border: unset;
-    font-family: "Bungee", sans-serif;
-    font-size: 1.8rem;
-    cursor: pointer;
-    &:active {
-      text-shadow: 1px 1px 2px var(--main-black-color);
-    }
+    width: 100%;
   `;
 };
