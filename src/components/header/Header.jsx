@@ -3,7 +3,7 @@
 import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 
-import Button from "../button/Button";
+import Button from "../button/ButtonClass";
 // import styles from "./header.module.css";
 import * as styles from "./header.styles";
 
@@ -26,7 +26,7 @@ const Header = function ({ showAddTogle, showAdd, clearTodos }) {
           <h1 css={styles.headerTitle}>Todo List</h1>
         </Item>
         <Item>
-          <Button text="Clear" color="red" align="right" onClick={clearTodos} />
+          <Button text="Clear" color="red" align="left" onClick={clearTodos} />
         </Item>
       </Container>
     </section>
@@ -36,7 +36,8 @@ const Header = function ({ showAddTogle, showAdd, clearTodos }) {
 Header.propTypes = {
   showAddTogle: PropTypes.func.isRequired,
   showAdd: PropTypes.bool.isRequired,
-  clearTodos: PropTypes.func.isRequired
+  clearTodos: PropTypes.func.isRequired,
+  align: PropTypes.string.isRequired
 };
 
 export default Header;
