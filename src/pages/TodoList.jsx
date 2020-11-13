@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Paper from "../components/paper/Paper";
 import Header from "../components/header/Header";
@@ -7,31 +7,21 @@ import Todos from "../components/todos/Todos";
 
 import Container from "../layout/Container";
 
-const TodoList = function () {
-  // const [todos, setTodos] = useState([
-  //   {
-  //     text: "Belajar React",
-  //     isCompleted: false
-  //   },
-  //   {
-  //     text: "Belajar Javascript",
-  //     isCompleted: false
-  //   },
-  //   {
-  //     text: "Belajar Javascript Framework",
-  //     isCompleted: false
-  //   }
-  // ]);
+import useStateWithLocalStorage from "../hooks/useStateWithLocalStorage";
 
-  const [todos, setTodos] = useState(
-    JSON.parse(localStorage.getItem("todos")) || []
-  );
+const TodoList = function () {
+  // import dari hooks custom
+  const [todos, setTodos] = useStateWithLocalStorage("todos");
+
+  // const [todos, setTodos] = useState(
+  //   JSON.parse(localStorage.getItem("todos")) || []
+  // );
 
   const [showAdd, setShowAdd] = useState(false);
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+  // useEffect(() => {
+  //   localStorage.setItem("todos", JSON.stringify(todos));
+  // }, [todos]);
 
   const addTodo = function (value) {
     const addedTodo = [...todos, { text: value, isCompleted: false }];
@@ -57,7 +47,7 @@ const TodoList = function () {
   const clearTodos = function () {
     if (showAdd) {
       !showAdd && setTodos([]);
-      return alert("Tidak Bisa menghapus ketika sedang ADD todo");
+      return alert("Tidak Bisa Menghapus Ketika Sedang ADD Todo");
     } else {
       setTodos([]);
     }
