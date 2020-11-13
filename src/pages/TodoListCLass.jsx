@@ -8,60 +8,64 @@ import Todos from "../components/todos/TodosCLass";
 import Container from "../layout/Container";
 
 class TodoList extends React.Component {
+  // buat state
   state = {
     todos: [
-      { text: "Belajar React", isCompleted: false },
       {
-        text: "Belajar Javascript",
+        text: "Ini dari classs brooooo",
+        isCompleted: false
+      },
+      {
+        text: "halvhvlvkalkvnlk",
         isCompleted: false
       },
       {
         text: "Belajar Javascript Framework",
-        isCompleted: true
+        isCompleted: false
       }
     ],
     showAdd: false
   };
 
   addTodo = (value) => {
-    if (this.state.todos.length < 10) {
-      const addedTodo = [
-        ...this.state.todos,
-        { text: value, isCompleted: false }
-      ];
+    const addedTodo = [
+      ...this.state.todos,
+      { text: value, isCompleted: false }
+    ];
 
+    if (this.state.todos > 10) {
+      alert("Todo Sudah Penuh!!!!!");
+    } else {
       this.setState = {
         todos: addedTodo
       };
-    } else {
-      alert("Todo Sudah Penuh!!!!!!");
     }
-  };
-
-  showAddTogle = () => {
-    this.setState = {
-      showAdd: true
-    };
   };
 
   completeTodo = (index) => {
     const addedTodo = [...this.state.todos];
+
     addedTodo[index].isCompleted = !addedTodo[index].isCompleted;
 
-    this.setState({
+    this.setState = {
       todos: addedTodo
-    });
+    };
   };
 
   clearTodos = () => {
     if (this.state.showAdd) {
-      alert("Tidak Bisa menghapus ketika sedang ADD todo");
-      return;
+      return alert("Tidak Bisa Menghapus Ketika Sedang ADD todo");
     } else {
-      this.setState({
+      this.setState = {
         todos: []
-      });
+      };
     }
+  };
+
+  showAddTogle = function () {
+    this.setState = {
+      showAdd: !showAdd
+    };
   };
 
   render() {
