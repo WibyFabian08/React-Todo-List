@@ -24,7 +24,7 @@ const Todos = function ({ todos, completeTodo }) {
         })}
       {todos.length === 0 && (
         <div css={styles.todosKosong}>
-          Clikc <span css={styles.addKosong}>Add</span> to Fill the Todo List
+          Click <span css={styles.addKosong}>Add</span> to Fill the Todo List
         </div>
       )}
     </section>

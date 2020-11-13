@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Paper from "../components/paper/PaperClass";
 import Header from "../components/header/HeaderCLass";
 import TodoForm from "../components/todoFrom/TodoFormCLass";
-import Todos from "../components/todos/Todos";
+import Todos from "../components/todos/TodosCLass";
 
 import Container from "../layout/Container";
 
