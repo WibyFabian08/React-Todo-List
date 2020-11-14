@@ -9,7 +9,6 @@ import * as styles from "./header.styles";
 
 import Container from "../../layout/Container";
 import Item from "../../layout/Item";
-import { Link } from "react-router-dom";
 
 const Header = function ({ showAddTogle, showAdd, clearTodos }) {
   return (
@@ -25,7 +24,6 @@ const Header = function ({ showAddTogle, showAdd, clearTodos }) {
         </Item>
         <Item textAlign="left">
           <h1 css={styles.headerTitle}>Todo List</h1>
-          <Link to="/About">Ke halaman about</Link>
         </Item>
         <Item>
           <Button text="Clear" color="red" align="left" onClick={clearTodos} />

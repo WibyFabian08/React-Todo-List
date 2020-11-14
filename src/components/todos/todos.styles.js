@@ -24,3 +24,11 @@ export const addKosong = function () {
     font-family: "Bungee", sans-serif;
   `;
 };
+
+export const aboutPageKosong = function () {
+  return css`
+    font-family: "Bungee", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+  `;
+};
